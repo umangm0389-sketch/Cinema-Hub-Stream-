@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>Cinema Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      padding: 15px;
+      background: #111;
+      margin: 0;
+    }
+    video {
+      width: 100%;
+      max-width: 900px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Cinema Hub</h1>
-  <p>Stream page ready</p>
+
+<h1>🎬 Cinema Hub</h1>
+
+{% if video %}
+  <video controls autoplay>
+    <source src="{{ video }}">
+    Your browser does not support video.
+  </video>
+{% else %}
+  <p style="margin-top:30px;">No video link provided</p>
+{% endif %}
+
 </body>
 </html>
